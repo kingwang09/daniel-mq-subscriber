@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Builder
@@ -22,4 +23,6 @@ public class Message implements Serializable {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
     private LocalDateTime registeredAt;
+
+    private List<Long> keywordIds;
 }
